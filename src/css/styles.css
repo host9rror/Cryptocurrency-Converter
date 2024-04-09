@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  background-color: #c4c4c4;
+}
+
+.exchange-window {
+  background-color: #fff;
+  width: 700px;
+  height: 400px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.main-text {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.select-valute {
+  display: flex;
+  gap: 25px;
+}
+
+.input {
+  max-width: 120px;
+  max-height: 10px;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 1px 1px 10px 1px lightgrey;
+}
+
+.input-value {
+  display: flex;
+  gap: 25px;
+}
+
+.convert-btn {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+  box-shadow: 1px 1px 10px 1px #0006ff;
+}
+
+.convert-btn .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.convert-btn .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.convert-btn .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.convert-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.convert-btn:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.convert-btn:hover .arrow:before {
+  right: 0;
+}
+
+.select-box {
+  position: relative;
+  width: 150px; /* Ширина селекта */
+}
+
+.select-box::after {
+  content: "\25BC"; /* Символ стрелочки вниз */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Чтобы клики проходили через псевдоэлемент */
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 1px lightgrey;
+}
+
+/* Стили при наведении на опцию */
+select option:hover {
+  background-color: lightgrey;
+}
+
+/* Стили для активной опции */
+select option:checked {
+  background-color: #645bff;
+  color: #fff;
+}
